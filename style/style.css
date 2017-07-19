@@ -1,0 +1,50 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #F3EEDE;
+}
+
+.header {
+  position: fixed;
+  background-color: #F3EEDE;
+  width: 100%;
+  top: 0px;
+  margin-bottom: 1em;
+}
+
+.menu {
+  margin-bottom: 1em;
+  border-radius: 1em;
+  font-size: 1em;
+}
+
+.stories {
+  overflow-y: scroll;
+  height: 100vh;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+.storyBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3em;
+}
+
+.storyBlock img{
+  width: 90%;
+}
+
+@media (min-width: 700px) {
+  .storyBlock {
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: flex-end;
+  }
+
+  .storyBlock img{
+    width: 30%;
+  }
+}
