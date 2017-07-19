@@ -32,10 +32,10 @@ addListener('select', 'change', function(event) {
     });
   });
   fetch(flagUrl(event.target.value), function(data) {
-      var flagImg = document.querySelector('.backgroundImage');
-      flagImg.setAttribute('alt', event.target.value + " flag");
-      flagImg.src = data.Response[0].Flag;
-    });
+    var flagImg = document.querySelector('.backgroundImage');
+    flagImg.setAttribute('alt', event.target.value + " flag");
+    flagImg.src = data.Response[0].Flag;
+  });
 });
 
 function addListener(selector, eventName, callback) {
