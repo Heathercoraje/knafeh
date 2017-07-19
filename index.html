@@ -5,33 +5,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Knafeh News</title>
 	<link href="style/style.css" rel="stylesheet" type="text/css">
-</head>
+	<link href="https://fonts.googleapis.com/css?family=Guardian+Egyptian+Web" rel="stylesheet">
 
-<body>
-	<header class='header'>
-		<h1>Knafeh News</h1>
-		<div class="menu">
+	<body>
+		<header class='header'>
+			<h1>Knafeh News</h1>
+			<div class="menu">
+				<select>
+					<option value="Israel">Israel</option>
+					<option value="UK">UK</option>
+					<option value="South Korea">South Korea</option>
+					<option value="Hong Kong">Hong Kong</option>
+				</select>
+			</div>
+		</header>
 
-		</div>
-		<select>
-	  		<option value="Israel">Israel</option>
-	  		<option value="UK">UK</option>
-	  		<option value="South Korea">South Korea</option>
-	  		<option value="Hong Kong">Hong Kong</option>
-			</select>
-	</header>
+		<section class="stories">
+			<div class="search-results">
+			</div>
+		</section>
 
-	<section class="stories">
-
-		<div class="search-results">
-		</div>
-
-	</section>
-
-	<script src="scripts/global.js"></script>
-	<script src="scripts/createTemplate.js"></script>
-	<script src="scripts/updateContent.js"></script>
-	<script src="scripts/api.js"></script>
-</body>
+		<script src="scripts/global.js"></script>
+		<script src="scripts/createTemplate.js"></script>
+		<script src="scripts/updateContent.js"></script>
+		<script src="scripts/api.js"></script>
+	</body>
 
 </html>

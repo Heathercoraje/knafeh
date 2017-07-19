@@ -1,50 +1,108 @@
 body {
+  font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
   text-align: center;
-  font-family: sans-serif;
   margin: 0;
   background-color: #F3EEDE;
 }
 
 .header {
+  background-color: black;
   position: fixed;
-  background-color: #F3EEDE;
   width: 100%;
   top: 0px;
-  margin-bottom: 1em;
+  margin-bottom: 0;
+}
+
+.header h1 {
+  color: white;
+  margin-bottom: 0;
 }
 
 .menu {
+  width: 60%;
+  margin: 1em auto;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-around;
   margin-bottom: 1em;
-  border-radius: 1em;
   font-size: 1em;
 }
 
+.backgroundImage {
+  width: 4.5em;
+  height: 3.2em;
+}
+
+select {
+  font-size: 15px;
+  width: 7em;
+  height: 3.5em;
+  border: 1px solid #bfb9b9;
+}
+
 .stories {
-  overflow-y: scroll;
   height: 100vh;
-  margin-top: 5em;
+  padding-left: 1.8em;
+  padding-right: 1.8em;
+  margin-top: 10em;
   margin-bottom: 5em;
+}
+
+.search-results {
+  /*border: red solid 1px;*/
+}
+
+.storyBlock>h3>a {
+  color: #2d2c2c;
+  text-decoration: none;
 }
 
 .storyBlock {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3em;
+  padding-bottom: 1.5em;
+  border-bottom: #979595 dashed 0.1em;
 }
 
-.storyBlock img{
+.storyBlock>h3 {
+  margin: 0.5em auto;
+}
+
+.storySummary {
+  display: none;
+}
+
+.storyBlock img {
   width: 90%;
+  box-shadow: 5px 5px 1px #888888;
 }
 
 @media (min-width: 700px) {
+  .menu {
+    width: 30%;
+    margin: 2em auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 1em;
+    font-size: 1em;
+  }
+  .backgroundImage {
+    width: 5em;
+    height: 4em;
+  }
   .storyBlock {
     flex-direction: row;
     justify-content: space-around;
     align-content: flex-end;
   }
-
-  .storyBlock img{
+  .storySummary {
+    display: inherit;
+  }
+  .storyBlock img {
     width: 30%;
   }
 }
