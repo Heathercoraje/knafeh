@@ -1,0 +1,23 @@
+{
+  "name": "knafeh",
+  "version": "1.0.0",
+  "description": "a news app for multiple countries",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape ./scripts/test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facn2/knafeh.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/facn2/knafeh/issues"
+  },
+  "homepage": "https://github.com/facn2/knafeh#readme",
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.7.0"
+  }
+}
