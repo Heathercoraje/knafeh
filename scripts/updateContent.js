@@ -13,6 +13,9 @@ function updateStory(result, index){
 }
 
 function flagUrl(country){
+  var picUrl = "https://countryapi.gear.host/v1/Country/getCountries?pName=";
+  var koreaUrl = "Korea+(Republic+of)";
+  var ukUrl = "united+kingdom";
   var flag;
   if(country === "UK")
     flag = picUrl + ukUrl;
@@ -24,4 +27,4 @@ function flagUrl(country){
 }
 
 if (typeof module !== 'undefined')
-  module.exports  = flagUrl; 
+  module.exports  = flagUrl;

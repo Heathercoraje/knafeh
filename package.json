@@ -4,7 +4,7 @@
   "description": "a news app for multiple countries",
   "main": "index.js",
   "scripts": {
-    "test": "tape ./scripts/test.js | tap-spec"
+    "test": "tape ./tests/test.js | tap-spec"
   },
   "repository": {
     "type": "git",
