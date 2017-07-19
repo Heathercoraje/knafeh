@@ -1,6 +1,6 @@
 //defining global variable
 var newsUrl = "https://content.guardianapis.com/search?q="; //the main url
-var newsUrl2 = "&api-key=7b8fdba3-2d40-4d8e-b725-99d86676fbe9&show-fields=thumbnail";
+var newsUrl2 = "&api-key=7b8fdba3-2d40-4d8e-b725-99d86676fbe9&show-fields=all";
 var newsUrlIsrael = newsUrl + 'israel' + newsUrl2;
 var picUrl = "https://countryapi.gear.host/v1/Country/getCountries?pName=";
 var israelUrl = "israel";
@@ -14,7 +14,7 @@ function fetch(url, callback) {
   xhr.onreadystatechange = function() {
     if (xhr.status === 200 && xhr.readyState == 4) {
       var data = JSON.parse(xhr.responseText);
-    //  console.log(data);
+      console.log(data);
       return callback(data);
 
     }
@@ -38,21 +38,21 @@ fetch(newsUrlIsrael, function(data) {
   data.response.results.forEach(function(result, index) {
     var storyBlock = document.createElement('div');
     storyBlock.setAttribute('class', 'storyBlock');
-
-
     var storyTitle = document.createElement('h3');
     storyTitle.setAttribute('id', 'h3' + index);
-    // storyTitle.innerText = result.webTitle; //textContent
-
     var storyLink = document.createElement('a');
     storyLink.setAttribute('id', 'a' + index);
     storyLink.href = result.webUrl;
-    //console.log(storyLink);
     storyLink.innerText = result.webTitle;
     storyTitle.appendChild(storyLink);
     storyBlock.appendChild(storyTitle);
 
-
+    var storySummary = document.createElement('p');
+    storySummary.setAttribute('id', 'p'+index);
+    storySummary.setAttribute('class', 'storySummary');
+    storySummary.innerText = result.fields.bodyText.split('. ').slice(0, 4).join('. ');
+    //console.log(storySummary);
+    storyBlock.appendChild(storySummary);
 
     var storyImage = document.createElement('img');
     storyImage.src = result.fields.thumbnail;
@@ -79,6 +79,9 @@ addListener('select', 'change', function(event) {
       var storyTitle = document.querySelector('#a' + index)
       storyTitle.innerText = result.webTitle;
       storyTitle.href = result.webUrl;
+
+      var storySummary = document.querySelector('#p' + index);
+      storySummary.innerText = result.fields.bodyText.split('. ').slice(0, 4).join('. ');
 
       var storyImage = document.querySelector('#img' + index)
       storyImage.src = result.fields.thumbnail;
