@@ -30,6 +30,7 @@ fetch(picUrlIsrael, function(data) {
     console.log(data.Response[0].flag)
     backgroundImage.src = data.Response[0].Flag;
     backgroundImage.setAttribute('class', 'backgroundImage');
+    backgroundImage.setAttribute('alt', 'Israel flag');
     backgroundDiv.appendChild(backgroundImage);
     document.querySelector(".menu").appendChild(backgroundDiv);
 });
@@ -39,7 +40,6 @@ fetch(newsUrlIsrael, function(data) {
     var storyBlock = document.createElement('div');
     storyBlock.setAttribute('class', 'storyBlock');
     var storyTitle = document.createElement('h3');
-    storyTitle.setAttribute('id', 'h3' + index);
     var storyLink = document.createElement('a');
     storyLink.setAttribute('id', 'a' + index);
     storyLink.href = result.webUrl;
@@ -57,6 +57,7 @@ fetch(newsUrlIsrael, function(data) {
     var storyImage = document.createElement('img');
     storyImage.src = result.fields.thumbnail;
     storyImage.setAttribute('id', 'img' + index);
+    storyImage.setAttribute('alt', result.webTitle);
     storyBlock.appendChild(storyImage);
     document.querySelector('.search-results').appendChild(storyBlock);
   })
@@ -89,6 +90,7 @@ addListener('select', 'change', function(event) {
   });
   fetch(flag, function(data) {
       var flagImg = document.querySelector('.backgroundImage');
+      flagImg.setAttribute('alt', event.target.value + " flag");
       flagImg.src = data.Response[0].Flag;
     });
 });
