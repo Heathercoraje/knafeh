@@ -93,3 +93,5 @@ addListener('select', 'change', function(event) {
 function addListener(selector, eventName, callback) {
   document.querySelector(selector).addEventListener(eventName, callback);
 }
+
+module.exports = fetch;
