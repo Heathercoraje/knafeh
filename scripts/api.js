@@ -1,14 +1,20 @@
 //defining global variable
-var url1 = "https://content.guardianapis.com/search?q="; //the main url
-var url2 = "&api-key=7b8fdba3-2d40-4d8e-b725-99d86676fbe9&show-fields=thumbnail";
-var urlIsrael = url1 + 'israel' + url2;
+var newsUrl = "https://content.guardianapis.com/search?q="; //the main url
+var newsUrl2 = "&api-key=7b8fdba3-2d40-4d8e-b725-99d86676fbe9&show-fields=thumbnail";
+var newsUrlIsrael = newsUrl + 'israel' + newsUrl2;
+var picUrl = "https://countryapi.gear.host/v1/Country/getCountries?pName=";
+var israelUrl = "israel";
+var picUrlIsrael = picUrl + israelUrl;
+var koreaUrl = "Korea+(Republic+of)";
+var ukUrl = "united+kingdom";
+
 
 function fetch(url, callback) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.status === 200 && xhr.readyState == 4) {
       var data = JSON.parse(xhr.responseText);
-      console.log(data);
+    //  console.log(data);
       return callback(data);
 
     }
@@ -17,7 +23,18 @@ function fetch(url, callback) {
   xhr.send();
 }
 
-fetch(urlIsrael, function(data) {
+fetch(picUrlIsrael, function(data) {
+    var backgroundDiv = document.createElement('div');
+    backgroundDiv.setAttribute('class', 'backgroundDiv');
+    var backgroundImage = document.createElement('img');
+    console.log(data.Response[0].flag)
+    backgroundImage.src = data.Response[0].Flag;
+    backgroundImage.setAttribute('class', 'backgroundImage');
+    backgroundDiv.appendChild(backgroundImage);
+    document.querySelector(".menu").appendChild(backgroundDiv);
+});
+
+fetch(newsUrlIsrael, function(data) {
   data.response.results.forEach(function(result, index) {
     var storyBlock = document.createElement('div');
     storyBlock.setAttribute('class', 'storyBlock');
@@ -48,20 +65,33 @@ fetch(urlIsrael, function(data) {
 addListener('select', 'change', function(event) {
   //console.log(event.target.value);
   //console.log(typeof(event.target.value));
-  var url = url1 + event.target.value + url2;
-  fetch(url, function(data) {
+  var news = newsUrl + event.target.value + newsUrl2;
+  var flag;
+  if(event.target.value === "UK")
+        flag = picUrl + ukUrl;
+  else if (event.target.value === "South Korea")
+        flag = picUrl + koreaUrl;
+  else
+        flag = picUrl + event.target.value;
+//  console.log(event.target.value)
+  fetch(news, function(data) {
     data.response.results.forEach(function(result, index) {
-
       var storyTitle = document.querySelector('#a' + index)
       storyTitle.innerText = result.webTitle;
       storyTitle.href = result.webUrl;
 
       var storyImage = document.querySelector('#img' + index)
       storyImage.src = result.fields.thumbnail;
-    })
-  })
-})
+    });
+  });
+  fetch(flag, function(data) {
+      var flagImg = document.querySelector('.backgroundImage');
+      flagImg.src = data.Response[0].Flag;
+    });
+});
 
 function addListener(selector, eventName, callback) {
   document.querySelector(selector).addEventListener(eventName, callback);
 }
+
+module.exports = fetch;
