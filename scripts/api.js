@@ -26,13 +26,6 @@ fetch(newsUrlIsrael, function(data) {
 
 addListener('select', 'change', function(event) {
   var news = newsUrl + event.target.value + newsUrl2;
-  // var flag;
-  // if(event.target.value === "UK")
-  //       flag = picUrl + ukUrl;
-  // else if (event.target.value === "South Korea")
-  //       flag = picUrl + koreaUrl;
-  // else
-  //       flag = picUrl + event.target.value;
   fetch(news, function(data) {
     data.response.results.forEach(function(result, index) {
       updateStory(result, index);
