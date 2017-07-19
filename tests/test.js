@@ -1,5 +1,5 @@
 var test = require('tape');
-var fetch = require('./api.js');
+var fetch = require('./updateContent.js');
 
 
 test('check tape is working', function(t) {
