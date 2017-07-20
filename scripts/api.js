@@ -5,7 +5,7 @@ function fetch(url, callback) {
   xhr.onreadystatechange = function() {
     if (xhr.status === 200 && xhr.readyState == 4) {
       var data = JSON.parse(xhr.responseText);
-      console.log(data);
+
       return callback(data);
 
     }
@@ -26,7 +26,7 @@ fetch(newsUrlIsrael, function(data) {
 
 addListener('select', 'change', function(event) {
   var news = newsUrl + event.target.value + newsUrl2;
-  console.log(event.target.value);
+
   window.scrollTo(0, 0);
   fetch(news, function(data) {
     data.response.results.forEach(function(result, index) {
