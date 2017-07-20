@@ -27,7 +27,7 @@ function createAndAppendIsraelStory(result, index) {
   var storySummary = document.createElement('p');
   storySummary.setAttribute('id', 'p' + index);
   storySummary.setAttribute('class', 'storySummary');
-  storySummary.innerText = result.fields.bodyText.split('. ').slice(0, 4).join('. ');
+  storySummary.innerText = result.fields.bodyText.split('. ').slice(0, 4).join('. '); //Taking first four sentences of article
   textContainer.appendChild(storySummary);
 
   var storyImage = document.createElement('img');
