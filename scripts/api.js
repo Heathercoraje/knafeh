@@ -25,7 +25,7 @@ fetch(newsUrlIsrael, function(data) {
 })
 
 addListener('select', 'change', function(event) {
-  var news = newsUrl + event.target.value + newsUrl2;
+  var news = baseURL + event.target.value + showFieldsURL;
   fetch(news, function(data) {
     data.response.results.forEach(function(result, index) {
       updateStory(result, index);
