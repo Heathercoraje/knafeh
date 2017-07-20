@@ -15,12 +15,12 @@ function fetch(url, callback) {
 }
 
 fetch(picUrlIsrael, function(data) {
-  createIsraelFlag(data);
+  createAndAppendIsraelFlag(data);
 });
 
 fetch(newsUrlIsrael, function(data) {
   data.response.results.forEach(function(result, index) {
-    createIsraelStory(result, index);
+    createAndAppendIsraelStory(result, index);
   })
 })
 
