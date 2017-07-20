@@ -31,10 +31,9 @@ addListener('select', 'change', function(event) {
       updateStory(result, index);
     });
   });
+
   fetch(flagUrl(event.target.value), function(data) {
-    var flagImg = document.querySelector('.backgroundImage');
-    flagImg.setAttribute('alt', event.target.value + " flag");
-    flagImg.src = data.Response[0].Flag;
+    updateFlag(data);
   });
 });
 
