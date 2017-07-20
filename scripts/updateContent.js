@@ -12,6 +12,12 @@ function updateStory(result, index){
   storyImage.src = result.fields.thumbnail;
 }
 
+function updateFlag(data) {
+    var flagImg = document.querySelector('.backgroundImage');
+    flagImg.setAttribute('alt', event.target.value + " flag");
+    flagImg.src = data.Response[0].Flag;
+  };
+
 function flagUrl(country){
   var picUrl = "https://countryapi.gear.host/v1/Country/getCountries?pName=";
   var koreaUrl = "Korea+(Republic+of)";
