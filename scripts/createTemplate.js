@@ -37,4 +37,6 @@ function createAndAppendIsraelStory(result, index) {
   storyBlock.appendChild(textContainer);
   storyBlock.appendChild(storyImage);
   document.querySelector('.search-results').appendChild(storyBlock);
+
+
 }
