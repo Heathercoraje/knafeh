@@ -1,6 +1,11 @@
 # knafeh
 a news app for multiple countries
+click [here](https://facn2.github.io/knafeh/);
 
+# Diagrams
+
+![architecture](./assets/diagramArchitecture.jpg)
+![mobile](./assets/mobile.jpg)
 
 ### User stories
 as a visitor in Israel I want to:
