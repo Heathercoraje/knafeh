@@ -35,6 +35,20 @@ addListener('select', 'change', function(event) {
   fetch(flagUrl(event.target.value), function(data) {
     updateFlag(data);
   });
+
+  //external link to more news
+  var url;
+  if (event.target.value === 'UK') {
+    url = ".co.uk";
+  } else if (event.target.value === 'South Korea')
+    url = ".co.kr";
+  else if (event.target.value === 'Hong Kong')
+    url = ".com.hk";
+  else if (event.target.value === 'Israel')
+    url = ".co.il";
+  else url = "com";
+  document.querySelector('#moreNews').href = "https://news.google" + url;
+
 });
 
 function addListener(selector, eventName, callback) {
