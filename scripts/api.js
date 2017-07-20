@@ -5,7 +5,9 @@ function fetch(url, callback) {
   xhr.onreadystatechange = function() {
     if (xhr.status === 200 && xhr.readyState == 4) {
       var data = JSON.parse(xhr.responseText);
+      console.log(data);
       return callback(data);
+
     }
   };
   xhr.open('GET', url, true);
