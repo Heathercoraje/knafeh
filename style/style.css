@@ -49,10 +49,6 @@ select {
   margin-bottom: 5em;
 }
 
-.search-results {
-  /*border: red solid 1px;*/
-}
-
 h3>a {
   color: #1c286d;
   text-decoration: none;
