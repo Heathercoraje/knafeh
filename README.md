@@ -1,6 +1,9 @@
 # knafeh
 a news app for multiple countries
-click [here](https://facn2.github.io/knafeh/);
+click [here](https://facn2.github.io/knafeh/).
+
+#### How to use
+The website will not work locally unless this [chrome extension](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi/reviews?hl=en) is installed.
 
 # Diagrams
 

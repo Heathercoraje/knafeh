@@ -1,6 +1,6 @@
 //functions for creating and rendering html elements
 
-function createIsraelFlag(data) {
+function createAndAppendIsraelFlag(data) {
   var backgroundDiv = document.createElement('div');
   backgroundDiv.setAttribute('class', 'backgroundDiv');
   var backgroundImage = document.createElement('img');
@@ -11,7 +11,7 @@ function createIsraelFlag(data) {
   document.querySelector(".menu").appendChild(backgroundDiv);
 }
 
-function createIsraelStory(result, index) {
+function createAndAppendIsraelStory(result, index) {
   var storyBlock = document.createElement('div');
   storyBlock.setAttribute('class', 'storyBlock');
   var textContainer = document.createElement('div');

@@ -15,12 +15,12 @@ function fetch(url, callback) {
 }
 
 fetch(picUrlIsrael, function(data) {
-  createIsraelFlag(data);
+  createAndAppendIsraelFlag(data);
 });
 
 fetch(newsUrlIsrael, function(data) {
   data.response.results.forEach(function(result, index) {
-    createIsraelStory(result, index);
+    createAndAppendIsraelStory(result, index);
   })
 })
 
@@ -33,10 +33,9 @@ addListener('select', 'change', function(event) {
       updateStory(result, index);
     });
   });
+
   fetch(flagUrl(event.target.value), function(data) {
-    var flagImg = document.querySelector('.backgroundImage');
-    flagImg.setAttribute('alt', event.target.value + " flag");
-    flagImg.src = data.Response[0].Flag;
+    updateFlag(data);
   });
 
   //external link to more news
