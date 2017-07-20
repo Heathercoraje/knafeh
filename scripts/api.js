@@ -26,6 +26,8 @@ fetch(newsUrlIsrael, function(data) {
 
 addListener('select', 'change', function(event) {
   var news = newsUrl + event.target.value + newsUrl2;
+  console.log(event.target.value);
+  window.scrollTo(0, 0);
   fetch(news, function(data) {
     data.response.results.forEach(function(result, index) {
       updateStory(result, index);
@@ -36,6 +38,20 @@ addListener('select', 'change', function(event) {
     flagImg.setAttribute('alt', event.target.value + " flag");
     flagImg.src = data.Response[0].Flag;
   });
+
+  //external link to more news
+  var url;
+  if (event.target.value === 'UK') {
+    url = ".co.uk";
+  } else if (event.target.value === 'South Korea')
+    url = ".co.kr";
+  else if (event.target.value === 'Hong Kong')
+    url = ".com.hk";
+  else if (event.target.value === 'Israel')
+    url = ".co.il";
+  else url = "com";
+  document.querySelector('#moreNews').href = "https://news.google" + url;
+
 });
 
 function addListener(selector, eventName, callback) {
