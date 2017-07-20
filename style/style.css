@@ -80,6 +80,14 @@ h3>a:hover {
   box-shadow: 5px 5px 1px #888888;
 }
 
+.newsLink {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-weight: bold;
+  color: #1c296d;
+  font-size: 1.1em;
+}
+
 @media (min-width: 700px) {
   header {
     display: flex;
@@ -135,4 +143,15 @@ h3>a:hover {
   .storySummary {
     display: inherit;
   }
+  .newsLink {
+    float: right;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+    font-weight: bold;
+    color: #1c296d;
+    font-size: 1.1em;
+  }
+}
+
+
 }
